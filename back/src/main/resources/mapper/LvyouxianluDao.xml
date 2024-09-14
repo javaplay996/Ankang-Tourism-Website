@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.LvyouxianluDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.LvyouxianluEntity" id="lvyouxianluMap">
+        <result property="youkezhanghao" column="youkezhanghao"/>
+        <result property="youkexingming" column="youkexingming"/>
+        <result property="xianluguihua" column="xianluguihua"/>
+        <result property="xianlutupian" column="xianlutupian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.LvyouxianluVO" >
+		SELECT * FROM lvyouxianlu  lvyouxianlu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.LvyouxianluVO" >
+		SELECT  lvyouxianlu.* FROM lvyouxianlu  lvyouxianlu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.LvyouxianluView" >
+
+		SELECT  lvyouxianlu.* FROM lvyouxianlu  lvyouxianlu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.LvyouxianluView" >
+		SELECT * FROM lvyouxianlu  lvyouxianlu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
